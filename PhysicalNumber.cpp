@@ -14,17 +14,17 @@ using namespace std;
     }
 
     PhysicalNumber operator+(const PhysicalNumber& p1,const PhysicalNumber& p2){
-        return *this;
+         return PhysicalNumber(0.0, Unit::KM);
     }
     
 	PhysicalNumber operator-(const PhysicalNumber& p1,const PhysicalNumber& p2){
-	     return *this;
+	      return PhysicalNumber(0.0, p1.u);
 	}
 	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber&){
-	    return *this;
+	    return PhysicalNumber(0.0,u);
 	}
 	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber&){
-	    return *this;
+	    return PhysicalNumber(0.0,u);
 	}
 
     bool operator> (const PhysicalNumber& p1,const PhysicalNumber& p2){
@@ -65,11 +65,42 @@ using namespace std;
      return *this;
     }
     
-    ostream& operator<< (ostream& os, const PhysicalNumber& c){//פלט
-        return os<<c.num<<" "<<c.u;//check 
+    ostream& ariel::operator<< (ostream& os, const PhysicalNumber& pn){//פלט
+       string str;
+    switch (pn.unit) {
+        case Unit::KM :
+            str = "km";
+            break;
+        case Unit::M :
+            str = "m";
+            break;
+        case Unit::CM :
+            str = "cm";
+            break;
+        case Unit::HOUR :
+            str = "hour";
+            break;
+        case Unit::MIN :
+            str = "min";
+            break;
+        case Unit::SEC :
+            str = "sec";
+            break;
+        case Unit::TON :
+            str = "ton";
+            break;
+        case Unit::KG :
+            str = "kg";
+            break;
+        case Unit::G :
+            str = "g";
+            break;
     }
-    istream& operator>> (istream& is, PhysicalNumber& c){//קלט
+    return os << pn.data << "[" << str << "]";
+}
+    }
+    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//קלט
     
-        double val;
-        Unit u;
+     is >> pn.data;
+    return is;
     }
