@@ -8,6 +8,8 @@
 #include <iostream>
 #include <strstream>
 #include <stdexcept>
+#include <fstream>
+#include <assert.h>
 using std::cout, std::endl, std::boolalpha;
 #include "PhysicalNumber.h"
 using ariel::PhysicalNumber;
