@@ -1,16 +1,18 @@
 #include <iostream>
-#include "Unit.hpp"
+#include "Unit.h"
 
 using namespace ariel;
-namespace ariel {
+using namespace std;
+
+//namespace ariel {
 class PhysicalNumber{
     private:
-    Unit type;
-    double val;
+    Unit u;
+    double num;
     
     public:
     PhysicalNumber(double num,Unit u);
-    PhysicalNumber(PhysicalNumber pn);
+    PhysicalNumber(PhysicalNumber& pn);
 
     friend PhysicalNumber operator+(const PhysicalNumber&,const PhysicalNumber&); 
 	friend PhysicalNumber operator-(const PhysicalNumber&,const PhysicalNumber&);
@@ -35,5 +37,5 @@ class PhysicalNumber{
     friend ostream& operator<< (ostream& os, const PhysicalNumber& c);//פלט
     friend istream& operator>> (istream& is, PhysicalNumber& c);//קלט
     
-    }
-}
+    };
+}//
