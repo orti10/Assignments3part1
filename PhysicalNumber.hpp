@@ -17,12 +17,12 @@ class PhysicalNumber{
 	PhysicalNumber operator+(); //אונרי
 	PhysicalNumber operator-(); //אונרי
 
-   friend bool operator> (PhysicalNumber& other);
-   friend bool operator< (PhysicalNumber& other);
-   friend bool operator>= (PhysicalNumber& other);
-   friend bool operator<= (PhysicalNumber& other);
-   friend bool operator== (PhysicalNumber& other);
-   friend bool operator!= (PhysicalNumber& other);
+   friend bool operator> (const PhysicalNumber& ,const PhysicalNumber&);
+   friend bool operator< (const PhysicalNumber& ,const PhysicalNumber&);
+   friend bool operator>= (const PhysicalNumber& ,const PhysicalNumber&);
+   friend bool operator<= (const PhysicalNumber& ,const PhysicalNumber&);
+   friend bool operator== (const PhysicalNumber& ,const PhysicalNumber&);
+   friend bool operator!= (const PhysicalNumber& ,const PhysicalNumber&);
     
     PhysicalNumber operator++();//++i
     PhysicalNumber operator++(int);//i++
