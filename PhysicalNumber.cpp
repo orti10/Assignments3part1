@@ -13,17 +13,17 @@ using namespace std;
     }
 
     PhysicalNumber operator+(const PhysicalNumber& p1,const PhysicalNumber& p2){
-        return PhysicalNumber(*this.num,*this.u);
+        return *this;
     }
     
 	PhysicalNumber operator-(const PhysicalNumber& p1,const PhysicalNumber& p2){
-	     return PhysicalNumber(*this.num,*this.u);
+	     return *this;
 	}
 	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber&){
-	    return PhysicalNumber (-*this.num,*this.u);
+	    return *this;
 	}
 	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber&){
-	    return PhysicalNumber (-*this.num,*this.u);
+	    return *this;
 	}
 
     bool operator> (const PhysicalNumber& p1,const PhysicalNumber& p2){
@@ -46,23 +46,26 @@ using namespace std;
     }
     
     PhysicalNumber PhysicalNumber::operator++(){//++i קודם מקדם ואז מדפיס
-        ++*this.num; //יותר יעיל
-        return PhysicalNumber(*this.num,*this.u);
+        //++*this.num; //יותר יעיל
+        //return PhysicalNumber(*this.num,*this.u);
+	return *this;
     }
     PhysicalNumber PhysicalNumber::operator++(int){//i++
         PhysicalNumber pn(*this);
-        ++*this.num;
-        return PhysicalNumber(pn.num,pn.u);//קודם מדפיס ואז מקדם את הערך
+        //++*this.num;
+        //return PhysicalNumber(pn.num,pn.u);//קודם מדפיס ואז מקדם את הערך
+    	 return *this;
     }
     PhysicalNumber PhysicalNumber::operator--(){//--i
-     return PhysicalNumber(*this.num-1,*this.u);
+     //return PhysicalNumber(*this.num-1,*this.u);
+    return *this;
     }
-    PhysicalNumber PhysicalNumber::operator--(int);//i--
-    
+    PhysicalNumber PhysicalNumber::operator--(int){//i--
+     return *this;
+    }
     
     ostream& operator<< (ostream& os, const PhysicalNumber& c){//פלט
         return os<<c.num<<" "<<c.u;//check 
-        
     }
     istream& operator>> (istream& is, PhysicalNumber& c){//קלט
     
