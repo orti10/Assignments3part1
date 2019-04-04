@@ -71,10 +71,6 @@ using namespace std;
 
     }
     istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//input
-    
-		return os;
-    }
-    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//
   
   	  return is;
     }
