@@ -1,30 +1,32 @@
 #include <iostream>
-#include "Unit.hpp"
+#include "Unit.h"
 
 using namespace ariel;
+using namespace std;
+
 namespace ariel {
 class PhysicalNumber{
     private:
-    Unit type;
-    double val;
+    Unit u;
+    double num;
     
     public:
     PhysicalNumber(double num,Unit u);
-    PhysicalNumber(PhysicalNumber pn);
+    PhysicalNumber(PhysicalNumber& pn);
 
     friend PhysicalNumber operator+(const PhysicalNumber&,const PhysicalNumber&); 
 	friend PhysicalNumber operator-(const PhysicalNumber&,const PhysicalNumber&);
 	PhysicalNumber& operator+=(const PhysicalNumber&);
 	PhysicalNumber& operator-=(const PhysicalNumber&);
-	PhysicalNumber operator+(); //אונרי
-	PhysicalNumber operator-(); //אונרי
+	PhysicalNumber operator+(); // Unari
+	PhysicalNumber operator-(); // Unari
 
-   friend bool operator> (const PhysicalNumber& ,const PhysicalNumber&);
-   friend bool operator< (const PhysicalNumber& ,const PhysicalNumber&);
-   friend bool operator>= (const PhysicalNumber& ,const PhysicalNumber&);
-   friend bool operator<= (const PhysicalNumber& ,const PhysicalNumber&);
-   friend bool operator== (const PhysicalNumber& ,const PhysicalNumber&);
-   friend bool operator!= (const PhysicalNumber& ,const PhysicalNumber&);
+    bool operator> (const PhysicalNumber&);
+    bool operator< (const PhysicalNumber&);
+    bool operator>= (const PhysicalNumber&);
+    bool operator<= (const PhysicalNumber&);
+    bool operator== (const PhysicalNumber&);
+    bool operator!= (const PhysicalNumber&);
     
     PhysicalNumber operator++();//++i
     PhysicalNumber operator++(int);//i++
@@ -35,5 +37,5 @@ class PhysicalNumber{
     friend ostream& operator<< (ostream& os, const PhysicalNumber& c);//פלט
     friend istream& operator>> (istream& is, PhysicalNumber& c);//קלט
     
-    }
+    };
 }

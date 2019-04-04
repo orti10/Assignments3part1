@@ -1,48 +1,48 @@
-#include "PhysicalNumber.hpp"
+#include "PhysicalNumber.h"
 #include <iostream>
 #include<exception>
 #include <math.h> 
 using namespace std;
     
     PhysicalNumber::PhysicalNumber(double num,Unit u){
-         *this.num=num;
-         *this.u=u;
+         this->num=num;
+         this->u=u;
      }
-    PhysicalNumber::PhysicalNumber(PhysicalNumber pn){
+    PhysicalNumber::PhysicalNumber(PhysicalNumber& pn){
         *this.num=pn.num;
         *this.u=pn.u;
     }
 
     PhysicalNumber operator+(const PhysicalNumber& p1,const PhysicalNumber& p2){
-        return *this;
+         return PhysicalNumber(0.0, Unit::KM);
     }
     
 	PhysicalNumber operator-(const PhysicalNumber& p1,const PhysicalNumber& p2){
-	     return *this;
+	      return PhysicalNumber(0.0, p1.u);
 	}
 	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber&){
-	    return *this;
+	    return PhysicalNumber(0.0,u);
 	}
 	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber&){
-	    return *this;
+	    return PhysicalNumber(0.0,u);
 	}
 
-    bool operator> (const PhysicalNumber& p1,const PhysicalNumber& p2){
+    bool PhysicalNumber::operator> (const PhysicalNumber& other){
         return false;
     }
-    bool operator< (PhysicalNumber& other){
+    bool PhysicalNumber::operator< (const PhysicalNumber& other){
         return false;
     }
-    bool operator>= (PhysicalNumber& other){
+    bool PhysicalNumber::operator>= (const PhysicalNumber& other){
         return false;
     }
-    bool operator<= (PhysicalNumber& other){
+    bool PhysicalNumber::operator<= (const PhysicalNumber& other){
         return false;
     }
-    bool operator== (PhysicalNumber& other){
+    bool PhysicalNumber::operator== (const PhysicalNumber& other){
         return false;
     }
-    bool operator!= (PhysicalNumber& other){
+    bool PhysicalNumber::operator!= (const PhysicalNumber& other){
         return false;
     }
     
@@ -65,11 +65,12 @@ using namespace std;
      return *this;
     }
     
-    ostream& operator<< (ostream& os, const PhysicalNumber& c){//פלט
-        return os<<c.num<<" "<<c.u;//check 
-    }
-    istream& operator>> (istream& is, PhysicalNumber& c){//קלט
+    ostream& ariel::operator<< (ostream& os, const PhysicalNumber& pn){//פלט
     
-        double val;
-        Unit u;
+    return os ;
+
+    }
+    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//קלט
+    
+    return is;
     }
