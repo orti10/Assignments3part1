@@ -65,51 +65,16 @@ using namespace std;
      return *this;
     }
     
-    ostream& ariel::operator<< (ostream& os, const PhysicalNumber& pn){//פלט
-<<<<<<< HEAD
+    ostream& ariel::operator<< (ostream& os, const PhysicalNumber& pn){//output
     
     return os ;
 
     }
-    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//קלט
+    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//input
     
-=======
-       string str;
-    switch (pn.unit) {
-        case Unit::KM :
-            str = "km";
-            break;
-        case Unit::M :
-            str = "m";
-            break;
-        case Unit::CM :
-            str = "cm";
-            break;
-        case Unit::HOUR :
-            str = "hour";
-            break;
-        case Unit::MIN :
-            str = "min";
-            break;
-        case Unit::SEC :
-            str = "sec";
-            break;
-        case Unit::TON :
-            str = "ton";
-            break;
-        case Unit::KG :
-            str = "kg";
-            break;
-        case Unit::G :
-            str = "g";
-            break;
-    }
-    return os << pn.data << "[" << str << "]";
-}
+		return os << pn.data << "[" << str << "]";
     }
     istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//קלט
-    
-     is >> pn.data;
->>>>>>> 80135b97fd0969e31ed9c2c628d44ba976eb4fe2
-    return is;
+  
+  	  return is;
     }
