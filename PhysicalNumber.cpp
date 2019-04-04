@@ -72,9 +72,9 @@ using namespace std;
     }
     istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//input
     
-		return os << pn.data << "[" << str << "]";
+		return os;
     }
-    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//קלט
+    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//
   
   	  return is;
     }
