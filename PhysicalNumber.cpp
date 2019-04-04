@@ -9,8 +9,8 @@ using namespace std;
          this->u=u;
      }
     PhysicalNumber::PhysicalNumber(PhysicalNumber& pn){
-        *this.num=pn.num;
-        *this.u=pn.u;
+         this->num=pn.num;
+         this->u=pn.u;
     }
 
     PhysicalNumber operator+(const PhysicalNumber& p1,const PhysicalNumber& p2){
