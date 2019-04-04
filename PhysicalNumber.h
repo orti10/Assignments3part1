@@ -4,7 +4,11 @@
 using namespace ariel;
 using namespace std;
 
+<<<<<<< HEAD:PhysicalNumber.h
 namespace ariel {
+=======
+//namespace ariel {
+>>>>>>> 80135b97fd0969e31ed9c2c628d44ba976eb4fe2:PhysicalNumber.hpp
 class PhysicalNumber{
     private:
     Unit u;
@@ -38,4 +42,8 @@ class PhysicalNumber{
     friend istream& operator>> (istream& is, PhysicalNumber& c);//קלט
     
     };
+<<<<<<< HEAD:PhysicalNumber.h
 }
+=======
+}//
+>>>>>>> 80135b97fd0969e31ed9c2c628d44ba976eb4fe2:PhysicalNumber.hpp

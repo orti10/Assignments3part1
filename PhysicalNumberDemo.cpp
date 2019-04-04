@@ -8,7 +8,13 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+<<<<<<< HEAD
 using std::cout, std::endl, std::boolalpha, std::istringstream;
+=======
+#include <fstream>
+#include <assert.h>
+using std::cout, std::endl, std::boolalpha;
+>>>>>>> 80135b97fd0969e31ed9c2c628d44ba976eb4fe2
 #include "PhysicalNumber.h"
 #include "Unit.h"
 using ariel::PhysicalNumber, ariel::Unit;
