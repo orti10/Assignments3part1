@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Unit.h"
 
-using namespace ariel;
+
 using namespace std;
 
 namespace ariel {

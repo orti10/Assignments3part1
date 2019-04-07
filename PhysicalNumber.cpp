@@ -22,10 +22,10 @@ using namespace ariel;
 	const PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& p1){
 	      return *this;
 	}
-	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber&){
+	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber& p1){
 	    return *this;
 	}
-	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber&){
+	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& p1){
 	    return *this;
 	}
 
@@ -67,12 +67,12 @@ using namespace ariel;
      return *this;
     }
     
-   ostream& operator<< (ostream& os, const PhysicalNumber& c){//output
+   ostream& ariel::operator<< (ostream& os, const PhysicalNumber& c){//output
     
     return os ;
 
     }
-  istream& operator>> (istream& is, PhysicalNumber& c){
+  istream& ariel::operator>> (istream& is, PhysicalNumber& c){
 	return is;
 }
 
