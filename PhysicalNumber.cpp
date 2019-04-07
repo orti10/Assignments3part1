@@ -30,6 +30,12 @@ using namespace ariel;
 	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& p1){
 	    return *this;
 	}
+    PhysicalNumber PhysicalNumber::operator+(){
+        return *this;
+    } // Unari
+	PhysicalNumber PhysicalNumber::operator-(){
+        return *this;
+    } // Unari
 
     bool PhysicalNumber::operator> (const PhysicalNumber& other){
         return false;

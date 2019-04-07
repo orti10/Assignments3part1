@@ -1,6 +1,7 @@
+#ifndef PHYSICALNUMBER_H
+#define PHYSICALNUMBER_H
 #include <iostream>
 #include "Unit.h"
-
 
 using namespace std;
 
@@ -40,5 +41,4 @@ class PhysicalNumber{
     
     };
 }
-
-
+#endif

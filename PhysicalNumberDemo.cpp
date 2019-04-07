@@ -1,4 +1,4 @@
-**
+/**
  * Demo file for the exercise on physical numbers
  *
  * @author Erel Segal-Halevi
@@ -8,12 +8,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
-
 using std::cout, std::endl, std::boolalpha, std::istringstream;
-
-#include <fstream>
-#include <assert.h>
-using std::cout, std::endl, std::boolalpha;
 #include "PhysicalNumber.h"
 #include "Unit.h"
 using ariel::PhysicalNumber, ariel::Unit;
