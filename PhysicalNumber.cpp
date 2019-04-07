@@ -3,28 +3,30 @@
 #include<exception>
 #include <math.h> 
 using namespace std;
-    
+using namespace ariel;
+
+
     PhysicalNumber::PhysicalNumber(double num,Unit u){
          this->num=num;
          this->u=u;
      }
     PhysicalNumber::PhysicalNumber(PhysicalNumber& pn){
-         this->num=pn.num;
-         this->u=pn.u;
+        this->num=pn.num;
+        this->u=pn.u;
     }
 
-    PhysicalNumber operator+(const PhysicalNumber& p1,const PhysicalNumber& p2){
-         return PhysicalNumber(0.0, Unit::KM);
+    const PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& p1){
+         return *this;
     }
     
-	PhysicalNumber operator-(const PhysicalNumber& p1,const PhysicalNumber& p2){
-	      return PhysicalNumber(0.0, p1.u);
+	const PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& p1){
+	      return *this;
 	}
 	PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber&){
-	    return PhysicalNumber(0.0,u);
+	    return *this;
 	}
 	PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber&){
-	    return PhysicalNumber(0.0,u);
+	    return *this;
 	}
 
     bool PhysicalNumber::operator> (const PhysicalNumber& other){
@@ -46,15 +48,15 @@ using namespace std;
         return false;
     }
     
-    PhysicalNumber PhysicalNumber::operator++(){//++i קודם מקדם ואז מדפיס
-        //++*this.num; //יותר יעיל
+    PhysicalNumber PhysicalNumber::operator++(){//++i first add and then print
+        //++*this.num; //better
         //return PhysicalNumber(*this.num,*this.u);
 	return *this;
     }
     PhysicalNumber PhysicalNumber::operator++(int){//i++
         PhysicalNumber pn(*this);
         //++*this.num;
-        //return PhysicalNumber(pn.num,pn.u);//קודם מדפיס ואז מקדם את הערך
+        //return PhysicalNumber(pn.num,pn.u);//first print and then add
     	 return *this;
     }
     PhysicalNumber PhysicalNumber::operator--(){//--i
@@ -65,12 +67,12 @@ using namespace std;
      return *this;
     }
     
-    ostream& ariel::operator<< (ostream& os, const PhysicalNumber& pn){//output
+   ostream& operator<< (ostream& os, const PhysicalNumber& c){//output
     
     return os ;
 
     }
-    istream& ariel::operator>> (istream& is, PhysicalNumber& pn){//input
-  
-  	  return is;
-    }
+  istream& operator>> (istream& is, PhysicalNumber& c){
+	return is;
+}
+

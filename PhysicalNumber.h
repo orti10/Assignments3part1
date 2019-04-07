@@ -15,8 +15,8 @@ class PhysicalNumber{
     PhysicalNumber(double num,Unit u);
     PhysicalNumber(PhysicalNumber& pn);
 
-    friend PhysicalNumber operator+(const PhysicalNumber&,const PhysicalNumber&); 
-	friend PhysicalNumber operator-(const PhysicalNumber&,const PhysicalNumber&);
+    const PhysicalNumber operator+(const PhysicalNumber&); 
+	const PhysicalNumber operator-(const PhysicalNumber&);
 	PhysicalNumber& operator+=(const PhysicalNumber&);
 	PhysicalNumber& operator-=(const PhysicalNumber&);
 	PhysicalNumber operator+(); // Unari
