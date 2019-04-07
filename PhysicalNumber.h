@@ -13,7 +13,7 @@ class PhysicalNumber{
     
     public:
     PhysicalNumber(double num,Unit u);
-    PhysicalNumber(PhysicalNumber& pn);
+    PhysicalNumber(const PhysicalNumber& pn);
 
     const PhysicalNumber operator+(const PhysicalNumber&); 
 	const PhysicalNumber operator-(const PhysicalNumber&);
@@ -22,12 +22,12 @@ class PhysicalNumber{
 	PhysicalNumber operator+(); // Unari
 	PhysicalNumber operator-(); // Unari
 
-    bool operator> (const PhysicalNumber&);
-    bool operator< (const PhysicalNumber&);
-    bool operator>= (const PhysicalNumber&);
-    bool operator<= (const PhysicalNumber&);
-    bool operator== (const PhysicalNumber&);
-    bool operator!= (const PhysicalNumber&);
+    bool operator> (const PhysicalNumber&) ;
+    bool operator< (const PhysicalNumber&) ;
+    bool operator>= (const PhysicalNumber&) ;
+    bool operator<= (const PhysicalNumber&) ;
+    bool operator== (const PhysicalNumber&) ;
+    bool operator!= (const PhysicalNumber&) ;
     
     PhysicalNumber operator++();//++i
     PhysicalNumber operator++(int);//i++

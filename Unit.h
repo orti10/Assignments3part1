@@ -1,6 +1,6 @@
 namespace ariel{
     
-    enum Unit {
+    enum class Unit {
 		KM, M, CM,
 		HOUR, MIN, SEC,
 		TON, KG, G
